@@ -2,8 +2,8 @@ package cap3Recursao;
 
 public class Main {
     public static void main(String[] args) {
-        // casoBaseCasoRecursivo(10);
-        // System.out.println("Fatorial de 5 é: " + fatorial(5));
+        /* casoBaseCasoRecursivo(10);
+        System.out.println("Fatorial de 5 é: " + fatorial(5));
         int[] array = {1, 2, 3, 4, 5};
         System.out.println("Soma dos elementos do array é: " + somandoElementos(array, array.length));
 
@@ -12,17 +12,20 @@ public class Main {
 
         String str = "arara";
         System.out.println("A string '" + str + "' é um palíndromo? " + verificarPalindromo(str));
+*/
 
+       // contagemRegressiva(15);
+
+        // String word = "java";
+        System.out.println(invertePalavra("java"));
     }
 
     public static boolean casoBaseCasoRecursivo(int num) {
         System.out.println(num);
-
         // CASO BASE - Quando o número for menor ou igual a 1, a função retorna FALSE e não chamará mais a função recursiva.
         if (num <= 1) {
             return false;
         }
-
         // CASO RECURSIVO - Quando o número for maior que 1, a função chamará a si mesma com o número decrementado em 1.
         else {
             casoBaseCasoRecursivo(num - 1);
@@ -30,19 +33,17 @@ public class Main {
         return false;
     }
 
-    public static int fatorial(int num){
+    public static int fatorial(int num) {
         // CASO BASE - Quando o número for igual a 1, a função retorna 1 e não chamará mais a função recursiva.
-        if(num == 1 ){
+        if (num == 1) {
             return 1;
-        }
-        else {
-            System.out.println("DEBUG: " + num);
+        } else {
             // CASO RECURSIVO - Enquanto o número for maior que 1, a função chamá a si mesma com o numero decrementado em 1.
             return num * fatorial(num - 1);
         }
     }
 
-    public static int somandoElementos(int[] array, int num){
+    public static int somandoElementos(int[] array, int num) {
         if (num == 0) {
             // CASO BASE - Quando o número for igual a 0, a função retorna 0 e não chamará mais a função recursiva.
             return 0;
@@ -53,12 +54,11 @@ public class Main {
     }
 
     public static int encontrarMaiorElemento(int[] array, int num) {
-        if(num == 1) {
+        if (num == 1) {
             return array[0];
-        }
-        else {
+        } else {
             int maior = encontrarMaiorElemento(array, num - 1);
-            if(array[num -1] > maior) {
+            if (array[num - 1] > maior) {
                 return array[num - 1];
             } else {
                 return maior;
@@ -81,8 +81,20 @@ public class Main {
         }
     }
 
-    // Me dê sugestoes de desafios de recursão para praticar, por favor.
-    // 1. Calcular a soma dos elementos de um array de inteiros.
-    // 2. Verificar se uma string é um palíndromo.
-    // 3. Encontrar o maior elemento em um array de inteiros.
+    public static boolean contagemRegressiva(int num){
+        System.out.println(num);
+        if(num <= 0){ //CASO BASE
+            return false;
+        } else { //CASO RECURSIVO
+            return contagemRegressiva(num - 1);
+        }
+    }
+
+    public static String invertePalavra(String str) {
+        if(str.isEmpty() || str.length() == 1) {
+            return str;
+        } else {
+            return invertePalavra(str.substring(1)) + str.charAt(0);
+        }
+    }
 }
