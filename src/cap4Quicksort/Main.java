@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import static cap4Quicksort.Quicksort.quicksort;
 import static cap4Quicksort.exercicios.IndexMaisAlto.MaiorValor;
 import static cap4Quicksort.exercicios.itensNaLIsta.contaItensNaLista;
 import static cap4Quicksort.exercicios.somandoArray.somandoArray;
@@ -20,6 +21,11 @@ public class Main {
 
         // Exercicio de Busca do Maior Valor em um Array
         ArrayList<Integer> randomNumbers = new ArrayList<>(Arrays.asList(1,8,6,4,12,55,3,13,25));
+        ArrayList<Integer> randomNumbers2 = new ArrayList<>(Arrays.asList(10, 5 , 2, 3));
         System.out.println("O maior valor é: " + MaiorValor(randomNumbers));
+
+        // Exercicio de ordenação com QUICKSORT
+        System.out.println(quicksort(randomNumbers2));
+
     }
 }
