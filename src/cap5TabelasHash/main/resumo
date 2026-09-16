@@ -1,0 +1,14 @@
+Funções Hash
+Uma tabela Hash é composta por uma Key e um Value.
+Em java HashMap<K, V> nome_da_função = new HashMap();
+
+Funções Hash's são importantes por diversos fatores.
+Elas são ótimas em fazerem buscas,o Big O de busca é O(1) -> mais eficiente do que
+busca binária que é O(log N).
+
+- Funções Hash mapeiam consistentemente um nome para o mesmo índice.
+- A função hash tem conhecimento sobre o tamanho do seu array e retornará apenas
+indices válidos.
+- É utilizada para pesquisas rápidas;
+- Evita entrada de valores duplicados;
+- É utilizada para armazenamento de Caches
